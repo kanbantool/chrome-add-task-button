@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <title>KanbanTool for Chrome</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/global.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/options.css" />
+  <script type="text/javascript" src="lib/jquery.min.js"></script>
+  <script type="text/javascript" src="lib/global.js"></script>
+  <script type="text/javascript" src="lib/api.js"></script>
+  <script type="text/javascript" src="lib/options.js"></script>
+</head>
+
+<body>
+  <div id="header"><img src="images/kanban_tool_logo-white.png" alt=""/></div>
+
+  <div id="content">
+
+    <div id="login_activity" class="activity">
+      <form action="#">
+        <h3>Login with API token</h3>
+        <p>
+          <label>Account domain name:</label>
+          <input id="account_subdomain" name="account_subdomain" placeholder=""/>.kanbantool.com
+        </p>
+        <p>
+          <label>API token:</label>
+          <input id="api_token" name="api_token" placeholder="see My Info &raquo; API Access"/>
+        </p>
+        <p>
+          <button onclick="return KanbanTool.Chrome.Options.loginFormSubmit();">Login with API token &raquo;</button>
+        </p>
+        <p class="note">
+          The API token can be generated on the <br/>
+          "My Info" &gt; "API access" page.
+        </p>
+      </form>
+      <div id="login_form_flash" class="flash" style="display:none;">&nbsp;</div>
+    </div>
+
+    <div id="options_activity" class="activity">
+      <section class="left_pane">
+        <form action="#">
+          <p>Logged into KanbanTool</p>
+          <p>
+            <button onclick="return KanbanTool.Chrome.Options.logoutFormSubmit();">&laquo; Logout</button>
+          </p>
+          <div id="login_form_flash" class="flash" style="display:none;">&nbsp;</div>
+        </form>
+      </section>
+
+      <section class="right_pane">
+        <h2>Where would you like to add tasks to?</h2>
+        <form>
+          <div class="form_row">
+            <label for="board_select">Board:</label>
+            <select id="board_select" name="board_id"></select>
+          </div>
+          <div class="form_row">
+            <label for="swimlane_select">Swimlane:</label>
+            <select id="swimlane_select" name="swimlane_id"></select>
+          </div>
+          <div class="form_row">
+            <label for="workflow_stage_select">Column:</label>
+            <select id="workflow_stage_select" name="workflow_stage_id"></select>
+          </div>
+
+          <div class="form_row submit">
+            <div id="options_form_flash" class="flash spinner" style=";">&nbsp;</div>
+            <input type="submit" name="submit" value="Save" id="board_select_submit" disabled="1" onclick="return KanbanTool.Chrome.Options.saveOptions();"/>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div id="popup_activity" class="activity">
+      <h2>Where would you like to add tasks to?</h2>
+      <form>
+        <div class="form_row">
+          <label for="board_select">Board:</label>
+          <select id="board_select" name="board_id"></select>
+        </div>
+        <div class="form_row">
+          <label for="swimlane_select">Swimlane:</label>
+          <select id="swimlane_select" name="swimlane_id"></select>
+        </div>
+        <div class="form_row">
+          <label for="workflow_stage_select">Column:</label>
+          <select id="workflow_stage_select" name="workflow_stage_id"></select>
+        </div>
+        <div class="form_row">
+          <label for="card_type_select">Card type:</label>
+          <select id="card_type_select" name="card_type_id"></select>
+        </div>
+
+        <div class="form_row submit">
+          <div id="options_form_flash" class="flash spinner" style=";">&nbsp;</div>
+          <input type="submit" name="submit" value="Save" id="board_select_submit" disabled="1" onclick="return KanbanTool.Chrome.Options.saveOptions();"/>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <p>
+      &copy; 2009-2011 Shore Labs for KanbanTool&trade;<br/>
+      released under the MIT license, source code <a href="https://github.com/kanbantool" target="_blank">freely available on the GitHub</a>
+    </p>
+  </div>
+</body>
+</html>

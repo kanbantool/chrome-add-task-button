@@ -1,0 +1,34 @@
+body {margin:0;padding:0;}
+#header { height: 45px; position:relative; background-color: #114373; -webkit-box-shadow:0 1px 8px rgba(0, 0, 0, 0.13); border-bottom:1px solid black; }
+#header img { padding-top:10px; padding-left:20px;}
+
+#content {padding-left:20px;}
+
+label {display:block; font-weight:bold;}
+input#account_subdomain {text-align:right; width:110px;}
+input#api_token {width:200px;}
+
+button {width:100px ;padding:3px;}
+.flash {padding:5px 0 5px 20px; background-repeat: no-repeat; font-style: italic; background-position: 3px center;}
+.flash.spinner {background-image: url('../images/spinner.gif');}
+.flash.error {background-color: #F1D9D9; -webkit-border-radius:5px;}
+.note {color:gray;}
+
+.activity { position:relative; display:block; width:580px; margin:30px auto; background-color:#f0f0f0; border:2px solid silver; -webkit-border-radius:10px; padding:10px; overflow: hidden;}
+  .left_pane {float:left;}
+  .right_pane {float:right; width:350px; border-left: 1px dotted silver; padding-left: 5px; background-color:#f0f0f0; z-index:10;}
+  .right_pane h2 {font-size:13px; text-align: center; }
+  .right_pane ul {list-style:none; margin-top:15px;}
+  .right_pane li {margin-bottom:5px; font-size:11px;}
+  .right_pane li a {color:navy; text-decoration: none;}
+  .right_pane li a:hover {text-decoration:underline;}
+
+#login_activity {width:250px;}
+#login_activity button {width:150px;}
+
+#options_activity .right_pane .form_row {margin:15px 0 0 0;}
+#options_activity .right_pane .form_row select {width:80%;}
+#options_activity .right_pane .flash {float:left;}
+#options_activity .right_pane .form_row.submit input {width:100px ;padding:3px; font-weight:bold; float:right;}
+
+#footer {color:gray; text-align:center; font-size:10px;}

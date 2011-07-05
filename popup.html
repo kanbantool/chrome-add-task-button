@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/global.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/popup.css" />
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/api.js"></script>
+    <script type="text/javascript" src="lib/global.js"></script>
+    <script type="text/javascript" src="lib/popup.js"></script>
+  </head>
+  
+  <body>
+    
+    <div id="new_task_activity" class="activity">
+      <form id="task_form" onsubmit="KanbanTool.Chrome.Popup.onTaskFormSubmit(); return false;">
+        <input type="hidden" id="task_workflow_stage_id" name="task[workflow_stage_id]" value=""/>
+        <input type="hidden" id="task_swimlane_id" name="task[swimlane_id]" value=""/>
+        
+        <div class="form_row">
+          <label for="task_name">Task name:</label>
+          <input type="text" id="task_name" name="task[name]"/>
+        </div>
+
+        <div class="form_row textarea">
+          <label for="task_name">Description:</label>
+          <textarea id="task_description" name="task[description]"></textarea>
+        </div>
+
+        <div class="form_row select">
+          <label for="card_type_select">Card Type:</label>
+          <select id="card_type_select" name="task[card_type_id]"><option>- Loading, please wait -</option></select>
+        </div>
+
+        <div class="form_row select">
+          <label for="assigned_user_select">Assigned to:</label>
+          <select id="assigned_user_select" name="task[assigned_user_id]"><option>- Loading, please wait -</option></select>
+        </div>
+
+        <input type="submit" name="submit" value="Add task" class="submit" id="new_task_submit"/>
+
+        <p id="task_created_flash" class="flash">✔ Task created.</p>
+        <p id="task_error_flash" class="flash"><strong>An error has occured.</strong><br/>Please make sure that you've filled the task name and that the board exists and is writable by you.</p>
+        <p id="connection_error_flash" class="flash"><strong>Connection error has occured.</strong><br/>Cannot communicate with the KanbanTool server. Please make sure that you are connected to the Internet.</p>
+        <p class="info">
+          Task will be added to the <span id="board_link">&nbsp;</span> board.<br/>
+          <a href="#" onclick="KanbanTool.Chrome.Popup.showBoardSelect(); return false;">Click here</a> to select different one.
+        </p>
+      </form>
+    </div>
+    
+    <div id="board_select_activity" class="activity">
+      <form>
+        <div class="form_row">
+          <label for="board_select">Board:</label>
+          <select id="board_select" name="board_id"></select>
+        </div>
+        <div class="form_row">
+          <label for="swimlane_select">Swimlane:</label>
+          <select id="swimlane_select" name="swimlane_id"></select>
+        </div>
+        <div class="form_row">
+          <label for="workflow_stage_select">Column:</label>
+          <select id="workflow_stage_select" name="workflow_stage_id"></select>
+        </div>
+
+        <a href="/popup.html" class="back_link" onclick="KanbanTool.Chrome.Popup.showTaskForm(); return false;">&laquo; go back</a>
+        <input type="submit" name="submit" value="Save &raquo;" id="board_select_submit" class="submit" disabled="1" onclick="KanbanTool.Chrome.Popup.saveBoardSelect();return false;" style="float:right;"/>
+        <div class="clear"></div>
+      </form>
+    </div>
+  </body>
+</html>

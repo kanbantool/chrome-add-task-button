@@ -1,0 +1,21 @@
+body {background-color:#F6EC50;}
+
+.activity {display:none;}
+
+form {width:200px;}
+  .form_row { margin-bottom:10px; }
+    .form_row label {display:block; font-weight:bold; }
+    .form_row input, .form_row textarea, .form_row select {border:1px solid black; width:100%;}
+    
+    input.submit {font-weight:bold; width:100%;}
+
+#task_name {width:100%;}
+textarea {height:75px;}
+
+p.flash { font-size:12px; font-family: Arial; padding:5px; width:185px; background-color:white; display:none; }
+p#task_created_flash { border:2px solid green; }
+p#task_error_flash {border:2px solid red;}
+p.info { font-size:9px; font-family: Arial;}
+
+#board_select_activity a.back_link { float:left; line-height:31px; text-decoration:none;}
+#board_select_activity input.submit { float:right; font-weight:bold; height:25px; width:100px; padding:3px; }
