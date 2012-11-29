@@ -12,7 +12,7 @@
   <body>
     
     <div id="new_task_activity" class="activity">
-      <form id="task_form" onsubmit="KanbanTool.Chrome.Popup.onTaskFormSubmit(); return false;">
+      <form id="task_form">
         <input type="hidden" id="task_workflow_stage_id" name="task[workflow_stage_id]" value=""/>
         <input type="hidden" id="task_swimlane_id" name="task[swimlane_id]" value=""/>
         
@@ -43,7 +43,7 @@
         <p id="connection_error_flash" class="flash"><strong>Connection error has occured.</strong><br/>Cannot communicate with the KanbanTool server. Please make sure that you are connected to the Internet.</p>
         <p class="info">
           Task will be added to the <span id="board_link">&nbsp;</span> board.<br/>
-          <a href="#" onclick="KanbanTool.Chrome.Popup.showBoardSelect(); return false;">Click here</a> to select different one.
+          <a href="#" id="show_board_select">Click here</a> to select different one.
         </p>
       </form>
     </div>
@@ -63,8 +63,8 @@
           <select id="workflow_stage_select" name="workflow_stage_id"></select>
         </div>
 
-        <a href="/popup.html" class="back_link" onclick="KanbanTool.Chrome.Popup.showTaskForm(); return false;">&laquo; go back</a>
-        <input type="submit" name="submit" value="Save &raquo;" id="board_select_submit" class="submit" disabled="1" onclick="KanbanTool.Chrome.Popup.saveBoardSelect();return false;" style="float:right;"/>
+        <a href="/popup.html" class="back_link">&laquo; go back</a>
+        <input type="submit" name="submit" value="Save &raquo;" id="board_select_submit" class="submit" disabled="1" style="float:right;"/>
         <div class="clear"></div>
       </form>
     </div>

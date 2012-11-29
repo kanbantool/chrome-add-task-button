@@ -28,7 +28,7 @@
           <input id="api_token" name="api_token" placeholder="see My Info &raquo; API Access"/>
         </p>
         <p>
-          <button onclick="return KanbanTool.Chrome.Options.loginFormSubmit();">Login with API token &raquo;</button>
+          <button id="login_with_api">Login with API token &raquo;</button>
         </p>
         <p class="note">
           The API token can be generated on the <br/>
@@ -43,7 +43,7 @@
         <form action="#">
           <p>Logged into KanbanTool</p>
           <p>
-            <button onclick="return KanbanTool.Chrome.Options.logoutFormSubmit();">&laquo; Logout</button>
+            <button id="logout_with_api">&laquo; Logout</button>
           </p>
           <div id="login_form_flash" class="flash" style="display:none;">&nbsp;</div>
         </form>
@@ -67,7 +67,7 @@
 
           <div class="form_row submit">
             <div id="options_form_flash" class="flash spinner" style=";">&nbsp;</div>
-            <input type="submit" name="submit" value="Save" id="board_select_submit" disabled="1" onclick="return KanbanTool.Chrome.Options.saveOptions();"/>
+            <input type="submit" name="submit" value="Save" id="board_select_submit" disabled="1" />
           </div>
         </form>
       </section>
@@ -95,7 +95,7 @@
 
         <div class="form_row submit">
           <div id="options_form_flash" class="flash spinner" style=";">&nbsp;</div>
-          <input type="submit" name="submit" value="Save" id="board_select_submit" disabled="1" onclick="return KanbanTool.Chrome.Options.saveOptions();"/>
+          <input type="submit" name="submit" value="Save" id="board_select_submit" disabled="1" />
         </div>
       </form>
     </div>
