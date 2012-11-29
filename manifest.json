@@ -1,6 +1,6 @@
 {
   "name": "KanbanTool add task button",
-  "version": "1.1",
+  "version": "1.2",
   "manifest_version": 2,
   "description": "A toolbar button which lets you add tasks to multiple boards without losing the stream of consciousness.",
   "options_page": "options.html",
